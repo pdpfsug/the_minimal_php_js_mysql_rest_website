@@ -9,7 +9,10 @@
          *
          * In questo caso è un array associativo perché il JSON che trasmette la posizione
          * è tipo:
-         *          {"lat": "43.3499293", "lon": "12.9138412", timestamp: "2018-05-17T19:08Z" }
+         *          {"lat": "43.3499293",
+         *           "lon": "12.9138412",
+         *           "timestamp": "2018-05-17T19:08Z"
+         *          }
          */
         $data = json_decode(file_get_contents('php://input'), true);
 
