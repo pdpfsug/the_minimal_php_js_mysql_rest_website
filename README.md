@@ -2,6 +2,8 @@
 
 Questo è il repository per la app minimale con tecnologie HTML , Javascript, PHP, e MySQL per i ragazzi del 5AI
 
+L'applicazione è raggiungibile su https://phpminimal.befair.it
+
 ## How to test
 
 Per testare la web application:
