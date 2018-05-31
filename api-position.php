@@ -19,8 +19,7 @@
         /* Insert data:
          * Inserisce i dati nel database
          */
-        $sql = $conn->prepare("INSERT INTO posizione VALUES(1, 1, ".$data['lat'].", ".$data['lon'].", '')");
-        $sql->execute();
+        mysqli_query($conn, "INSERT INTO posizione VALUES(1, 1, ".$data['lat'].", ".$data['lon'].", '')");
 
     } else if($_SERVER['REQUEST_METHOD'] == 'GET') {
 
