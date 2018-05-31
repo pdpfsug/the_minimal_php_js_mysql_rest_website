@@ -30,10 +30,10 @@ $.get(
     function(data) {
         console.log(data);
         $.each(data, function(i,e){
-            $('table tbody').append('<tr><td>'+e.id+'</td><td>'+e.user+'</td><td>'+e.lat+'</td><td>'+e.lon+'</td><td>'+e.timestamp+'</td></tr>')
+            $('table tbody').append('<tr><td>'+e.id+'</td><td>'+e.user+'</td><td>'+e.lat+'</td><td>'+e.lon+'</td><td>'+e.datetime+'</td></tr>')
         });
     }
 );
 </script>
 
-<?php require "footer.php"; ?>
+<?php require "footer.html"; ?>
