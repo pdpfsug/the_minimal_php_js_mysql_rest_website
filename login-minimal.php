@@ -1,32 +1,32 @@
 <?php
-
 require "header.php";
-
-$username="";
-$password="";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $username=$_POST['username'];
     $password=$_POST['password'];
 
-    if( authenticated($username, $password) ) ){
-        $_SESSION['login'] = $username;
+
+    $user_id = authenticated($username, $password);
+    if ( $user_id ) {
+        $_SESSION['username'] = $username;
+        $_SESSION['user_id'] = $user_id;
         header ("Location: client.php");
         exit;
     }
     else {
-        $_SESSION['login'] ="";
+        $_SESSION['username'] ="";
+        $_SESSION['user_id'] = false;
     }
 }
 ?>
 
 <h2>
 <?php
-    if(!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
+    if(!(isset($_SESSION['username']) && $_SESSION['username'] != '')) {
         echo "Non sei autenticato";
-        echo "<h3>Puoi entrare con utente:utente</h3>";
+        echo "<h3>Puoi entrare con <nick>:<nick></h3>";
     } else
-        echo "Ciao ".$_SESSION['login'];
+        echo "Ciao ".$_SESSION['username'];
 ?>
 </h2>
 
