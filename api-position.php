@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $conn = mysqli_connect('localhost', 'phpminimal', 'phpcrazy') or die('Connection error');
     mysqli_select_db($conn, 'esempio') or die('DB error');
 
@@ -20,7 +21,8 @@
          * Inserisce i dati nel database
          */
         $user_id = $_SESSION["user_id"];
-        mysqli_query($conn, "INSERT INTO posizione (user_id, timestamp, lat, lon, msg) VALUES($user_id, ".$data['timestamp'].", ".$data['lat'].", ".$data['lon'].", '')");
+        $timestamp = date("Y-m-d H:i:s");  // Il timestamp è calcolato lato server...
+        mysqli_query($conn, "INSERT INTO posizione (user_id, timestamp, lat, lon, msg) VALUES($user_id, ".$timestamp.", ".$data['lat'].", ".$data['lon'].", '')");
 
     } else if($_SERVER['REQUEST_METHOD'] == 'GET') {
 
