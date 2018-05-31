@@ -18,7 +18,8 @@ function authenticated($u, $p) {
     $ris = mysqli_query($conn, "SELECT * FROM utente WHERE username='$u' AND password=PASSWORD('$p');");
 
     if ($ris->num_rows > 0) {
-        return $ris[0]["user_id"];
+        $user = mysqli_fetch_assoc($ris);
+        return $user["id"];
     } else {
         return false;
     }
