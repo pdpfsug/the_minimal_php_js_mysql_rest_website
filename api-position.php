@@ -21,7 +21,12 @@
          * Inserisce i dati nel database
          */
         $user_id = $_SESSION["user_id"];
-        mysqli_query($conn, "INSERT INTO posizione (user_id, lat, lon, msg) VALUES(".$user_id.", ".$pos_data['lat'].", ".$pos_data['lon'].", '')");
+        $ris = mysqli_query($conn, "INSERT INTO posizione (user_id, lat, lon, msg) VALUES(".$user_id.", ".$pos_data['lat'].", ".$pos_data['lon'].", '')");
+        if ($ris) {
+            echo "OK"; // risposta 200 con corpo testuale "OK"
+        } else {
+            echo "Non OK"; // qui dovrei restituire un codice HTTP di tipo 4xx
+        }
 
     } else if($_SERVER['REQUEST_METHOD'] == 'GET') {
 
