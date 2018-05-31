@@ -15,37 +15,36 @@
          *           "timestamp": "2018-05-17T19:08Z"
          *          }
          */
-        $data = json_decode(file_get_contents('php://input'), true);
+        $pos_data = json_decode(file_get_contents('php://input'), true);
 
         /* Insert data:
          * Inserisce i dati nel database
          */
         $user_id = $_SESSION["user_id"];
-        $timestamp = date("Y-m-d H:i:s");  // Il timestamp è calcolato lato server...
-        mysqli_query($conn, "INSERT INTO posizione (user_id, timestamp, lat, lon, msg) VALUES($user_id, ".$timestamp.", ".$data['lat'].", ".$data['lon'].", '')");
+        mysqli_query($conn, "INSERT INTO posizione (user_id, lat, lon, msg) VALUES(".$user_id.", ".$pos_data['lat'].", ".$pos_data['lon'].", '')");
 
     } else if($_SERVER['REQUEST_METHOD'] == 'GET') {
 
         header('Content-type: application/json;');
-        echo '
-            [
-                {"id": 1, "user": "tapion", "lat": 43.3499293, "lon": 12.9138412, "timestamp": "now"},
-                {"id": 2, "user": "tapion", "lat": 43.3499293, "lon": 12.9138412, "timestamp": "now"},
-                {"id": 3, "user": "tapion", "lat": 43.3499293, "lon": 12.9138412, "timestamp": "now"},
-                {"id": 4, "user": "tapion", "lat": 43.3499293, "lon": 12.9138412, "timestamp": "now"},
-                {"id": 5, "user": "tapion", "lat": 43.3499293, "lon": 12.9138412, "timestamp": "now"},
-                {"id": 6, "user": "radeox", "lat": 43.3499293, "lon": 12.9138412, "timestamp": "now"},
-                {"id": 7, "user": "tapion", "lat": 43.3499293, "lon": 12.9138412, "timestamp": "now"},
-                {"id": 8, "user": "tapion", "lat": 43.3499293, "lon": 12.9138412, "timestamp": "now"}
-            ]
-        ';
-        // TODO
-        // $sql = $conn->prepare("SELECT * FROM posizione");
-        // $sql->execute();
+        $ris = mysqli_query($conn, "SELECT posizione.id, username as user, lat, lon, datetime FROM posizione JOIN utente ON utente.id=posizione.user_id");
+        $myArray = array();
+        while ($row = mysqli_fetch_assoc($ris)) {
+            $myArray[] = $row;
+        }
+        // echo '
+        //     [
+        //         {"id": 1, "user": "tapion", "lat": 43.3499293, "lon": 12.9138412, "timestamp": "now"},
+        //         {"id": 2, "user": "tapion", "lat": 43.3499293, "lon": 12.9138412, "timestamp": "now"},
+        //         {"id": 3, "user": "tapion", "lat": 43.3499293, "lon": 12.9138412, "timestamp": "now"},
+        //         {"id": 4, "user": "tapion", "lat": 43.3499293, "lon": 12.9138412, "timestamp": "now"},
+        //         {"id": 5, "user": "tapion", "lat": 43.3499293, "lon": 12.9138412, "timestamp": "now"},
+        //         {"id": 6, "user": "radeox", "lat": 43.3499293, "lon": 12.9138412, "timestamp": "now"},
+        //         {"id": 7, "user": "tapion", "lat": 43.3499293, "lon": 12.9138412, "timestamp": "now"},
+        //         {"id": 8, "user": "tapion", "lat": 43.3499293, "lon": 12.9138412, "timestamp": "now"}
+        //     ]
+        // ';
 
-        // $result = $sql->get_result();
-        // Giusto cosi? Bhooo
-        // echo json_encode($result);
+        echo json_encode($myArray);
     }
 
     mysqli_close($conn);
