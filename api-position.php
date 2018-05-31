@@ -19,7 +19,8 @@
         /* Insert data:
          * Inserisce i dati nel database
          */
-        mysqli_query($conn, "INSERT INTO posizione VALUES(1, 1, ".$data['lat'].", ".$data['lon'].", '')");
+        $user_id = $_SESSION["user_id"];
+        mysqli_query($conn, "INSERT INTO posizione (user_id, timestamp, lat, lon, msg) VALUES($user_id, ".$data['timestamp'].", ".$data['lat'].", ".$data['lon'].", '')");
 
     } else if($_SERVER['REQUEST_METHOD'] == 'GET') {
 
