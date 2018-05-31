@@ -14,7 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         exit;
     }
     else {
-        $_SESSION['login'] ="";
+        $_SESSION['username'] ="";
+        $_SESSION['user_id'] = false;
     }
 }
 ?>
@@ -22,10 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 <section class="section">
     <h2>
     <?php
-        if(!(isset($_SESSION['login']) && $_SESSION['login'] != ''))
+        if(!(isset($_SESSION['username']) && $_SESSION['username'] != ''))
             echo "Non sei autenticato";
         else
-            echo "Ciao ".$_SESSION['login'];
+            echo "Ciao ".$_SESSION['username'];
     ?>
     </h2>
 
