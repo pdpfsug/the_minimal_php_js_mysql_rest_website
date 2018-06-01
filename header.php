@@ -39,13 +39,13 @@ function authenticated($u, $p) {
 
     <nav role="navigation" aria-label="main navigation" class="navbar is-primary">
         <div class="navbar-brand">
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="my_menu">
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
             </a>
         </div>
-        <div class="navbar-menu">
+        <div class="navbar-menu" id="my_menu">
             <a class="navbar-item" href="/login.php">Home</a>
             <a class="navbar-item" href="/login-minimal.php">Home minimale</a>
             <a class="navbar-item" href="/client.php">Comunica la tua posizione</a>
@@ -54,4 +54,3 @@ function authenticated($u, $p) {
             <a class="navbar-item" href="/logout.php">Logout</a>
         </div>
     </nav>
-
