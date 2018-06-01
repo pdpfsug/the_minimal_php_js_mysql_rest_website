@@ -39,6 +39,7 @@ function authenticated($u, $p) {
 
     <nav role="navigation" aria-label="main navigation" class="navbar is-primary">
         <div class="navbar-brand">
+            <a class="navbar-item" href="/"> PHP/JS/CSS site </a>
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="my_menu">
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
