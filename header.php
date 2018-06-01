@@ -36,13 +36,22 @@ function authenticated($u, $p) {
     </head>
   <body>
     <script src="assets/jquery-3.3.1.min.js"></script>
-    <nav>
-        <ul>
-            <li><a href="/login.php">Home</a></li>
-            <li><a href="/login-minimal.php">Home minimale</a></li>
-            <li><a href="/client.php">Comunica la tua posizione</a></li>
-            <li><a href="/dashboard.php">Tabella</a></li>
-            <li><a href="/dashboard-ajax.php">Tabella (AJAX)</a></li>
-            <li><a href="/logout.php">Logout</a></li>
-        </ul>
+
+    <nav role="navigation" aria-label="main navigation" class="navbar is-primary">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <a class="navbar-item" href="/login.php">Home</a>
+            <a class="navbar-item" href="/login-minimal.php">Home minimale</a>
+            <a class="navbar-item" href="/client.php">Comunica la tua posizione</a>
+            <a class="navbar-item" href="/dashboard.php">Tabella</a>
+            <a class="navbar-item" href="/dashboard-ajax.php">Tabella (AJAX)</a>
+            <a class="navbar-item" href="/logout.php">Logout</a>
+        </div>
     </nav>
+
