@@ -1,6 +1,6 @@
 # the_minimal_php_js_mysql_rest_website
 
-Questo è il repository per la app minimale con tecnologie HTML , Javascript, PHP, e MySQL per i ragazzi del 5B INF
+Questo è il repository per la app minimale con tecnologie HTML , Javascript, PHP, e MySQL per i ragazzi del 5B INF!!!
 
 L'applicazione è raggiungibile su https://phpminimal.befair.it
 
