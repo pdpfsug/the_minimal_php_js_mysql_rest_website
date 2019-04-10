@@ -3,7 +3,7 @@
 <section class="section">
     <div id="log" class="container">
         <p>Attendo di stabilire la posizione geografica...</p>
-        <img src="gif_caricamento.gif">
+       echo "<img src="gif_caricamento.gif">";
     </div>
 </section>
 
