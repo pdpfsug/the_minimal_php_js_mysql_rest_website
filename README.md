@@ -9,15 +9,19 @@ L'applicazione è raggiungibile su https://phpminimal.befair.it
 Per testare la web application:
 
 ### Creare il database
+La definizione del database è nel file [database.sql](https://gitlab.com/feroda/the_minimal_php_js_mysql_rest_website/blob/master/database.sql).
 
-Ad esempio con `mysql < database.sql`
+Copiare le query in esso contenute ed eseguire nel proprio DBMS.
+
+Da riga di comando si può fare con `mysql < database.sql`
 
 ### Creare un utente con tutti i diritti su quel database
 
 ```
 mysql esempio
-CREATE USER 'phpminimal' IDENTIFIED BY 'phpminimal';
+CREATE USER 'phpminimal' IDENTIFIED BY 'phpcrazy';
 GRANT ALL PRIVILEGES ON esempio.* TO 'phpminimal';
+FLUSH PRIVILEGES;
 ```
 
 ### Creare utente di test
