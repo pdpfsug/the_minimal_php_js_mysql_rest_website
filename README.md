@@ -6,7 +6,12 @@ L'applicazione è raggiungibile su https://phpminimal.befair.it
 
 ## How to test
 
-Per testare la web application:
+Per testare la web application è necessario predisporre il proprio ambiente di sviluppo.
+Una soluzione molto semplici per installare l'ambiente di sviluppo è:
+* [XAMP](https://www.apachefriends.org/it/download.html): un ambiente Apache + MySQL + PHP multipiattaforma (la X  sta per "qualsiasi" sistema operativo)
+
+Per capire più in dettaglio le configurazioni delle varie componenti (e quindi approfondire)
+si possono installare separatamente le componenti. 
 
 ### Creare il database
 La definizione del database è nel file [database.sql](https://gitlab.com/feroda/the_minimal_php_js_mysql_rest_website/blob/master/database.sql).
