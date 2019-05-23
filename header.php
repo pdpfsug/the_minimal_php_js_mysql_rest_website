@@ -64,6 +64,7 @@ function authenticated($u, $p) {
         });
     </script>
 
+	Modifica body
     <nav role="navigation" aria-label="main navigation" class="navbar is-primary">
         <div class="navbar-brand">
             <a class="navbar-item" href="/"> PHP/JS/CSS site </a>
