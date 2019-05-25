@@ -7,7 +7,7 @@ L'applicazione è raggiungibile su https://phpminimal.befair.it
 ## How to test
 
 Per testare la web application è necessario predisporre il proprio ambiente di sviluppo.
-Una soluzione molto semplici per installare l'ambiente di sviluppo è:
+Una soluzione molto semplice per installare l'ambiente di sviluppo è:
 * [XAMP](https://www.apachefriends.org/it/download.html): un ambiente Apache + MySQL + PHP multipiattaforma (la X  sta per "qualsiasi" sistema operativo)
 
 Per capire più in dettaglio le configurazioni delle varie componenti (e quindi approfondire)
